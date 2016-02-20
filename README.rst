@@ -15,6 +15,7 @@ To run the scripts the only dependency needed is python and virtualenv. Clone th
     virtualenv . # create a python virtualenv
     ./bin/pip install requests # install requests dependency
     vi list_machines.py # add EMAIL and PASSWORD
+    ./bin/python list_machines.py # run script list_machines.py
 
 
 SCRIPTS
