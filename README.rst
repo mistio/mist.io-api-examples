@@ -8,7 +8,7 @@ Examples of scripts created with the mist.io API. More info can be found on http
 How to run the scripts
 ----------------------
 
-To run the scripts the only dependency needed is python and virtualenv. Clone this repository, create a virtualenv, install python requests lib, edit the script that interests you and set the email/password credentials you use to login to mist.io, and then you'll be able to run the scripts.
+To run the scripts the only dependency needed is python and virtualenv. Clone this repository, create a virtualenv, install python requests lib, edit the script that interests you and set the email/password credentials you use to login to mist.io, and then you'll be able to run the scripts::
 
     git clone https://github.com/mistio/mist.io-api-examples # clone the repository
     cd mist.io-api-examples
