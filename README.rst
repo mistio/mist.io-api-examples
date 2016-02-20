@@ -27,7 +27,7 @@ list_machines.py
 prints machines for all cloud added to mist.io .Shows machine name, state, machine cloud provider, machine size, launch time and price
 Example output::
 
-    *** Received 17 clouds and 10 machines. Time taken: 12 seconds ***
+    *** Received 10 clouds and 17 machines. Time taken: 12 seconds ***
     *** Showing machine name, state, machine cloud provider, machine size, launch time and price ***
     *** size/launch time is EC2 specific but can easily be configured for any other provider ***
     *** machine price is what the machine has as tag price. Could easily be a value on the metadata as well ***
