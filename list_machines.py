@@ -100,7 +100,7 @@ def main():
         launch_time = None
         # EC2 has on the metadata launch_time
         if cloud.get('provider').startswith('ec2'):
-            instance_type = extra.get('launch_time')
+            launch_time = extra.get('launch_time')
 
         # Tags are either returned by the provider, or added by user through mist.io
         # If a tag price exists, then show it
