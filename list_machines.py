@@ -14,7 +14,7 @@ import multiprocessing.pool
 try:
     import requests
 except ImportError:
-    sys.exit('ERROR: please install requests library')
+    sys.exit('ERROR: please install requests library, eg ./bin/pip install requests if you are inside a virtualenv')
 
 API_KEY = 'XYZ' # visit https://mist.io/account and generate an API KEY!
 
