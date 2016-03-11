@@ -16,8 +16,7 @@ try:
 except ImportError:
     sys.exit('ERROR: please install requests library')
 
-EMAIL = ''
-PASSWORD = ''
+API_KEY = 'XYZ' # visit https://mist.io/account and generate an API KEY!
 
 
 def list_all_machines(cloud_ids, headers):
@@ -64,14 +63,17 @@ def main():
     start_time = time.time()
     # Authenticate with mist.io using email/password.
     # We get an API token we'll use on all requests from now on
-    conn = requests.post('https://mist.io/auth', data={'email': EMAIL, 'password': PASSWORD})
-    if conn.status_code != 200:
-        sys.exit('ERROR: please provide a valid username and password - aka your mist.io account')
-    API = json.loads(conn.text).get('token')
-    headers = {'Authorization': API}
+    # Make sure you put the API token on the beginning of this file!
+    if not API_KEY:
+        sys.exit('Please create a valid API_KEY, by visiting your account page on https://mist.io/account')
+    headers = {'Authorization': API_KEY}
 
     # Get clouds
-    clouds = requests.get('https://mist.io/clouds', headers=headers).json()
+    try:
+        clouds = requests.get('https://mist.io/clouds', headers=headers).json()
+    except ValueError:
+        sys.exit('Error with API_KEY, please visit https://mist.io/account and get a valid API_KEY')
+
     cloud_ids = [cloud.get('id') for cloud in clouds]
     # Get machines
     machines = list_all_machines(cloud_ids, headers)
